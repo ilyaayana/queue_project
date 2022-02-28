@@ -1,6 +1,6 @@
 #include "LQueue.h"
 
-#pragma warning(disable : 4996)
+#pragma warning(disable :  4996)
 
 
 void LQueue::Erase() {

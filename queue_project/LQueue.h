@@ -5,7 +5,7 @@
 #include <exception>
 using namespace std;
 
-enum Priority {
+enum  Priority {
 	HIGH,
 	MEDIUM,
 	LOW,
