@@ -7,6 +7,12 @@
 
 using namespace std;
 
+void swap(LQueue* q1, LQueue* q2) {
+	LQueue* tmp = new LQueue(std::move(*q1));
+	*q1 = std::move(*q2);
+	*q2 = std::move(*tmp);
+}
+
 
 int main()
 {
@@ -36,7 +42,7 @@ int main()
 			"6.Вывод числа элементов\n"
 			"7.Выбрать другую очередь\n"
 			"8.Копировать выбранную очередь в другую\n"
-			"9.Переместить выбранную очередь в другую\n"
+			"9.Произвести обмен между очередями\n"
 			"Ваш выбор: ";
 		cin >> option;
 
@@ -139,7 +145,7 @@ int main()
 			query_vector[!vector_index] = query_vector[vector_index]; 
 			break;
 		case 9:
-			query_vector[!vector_index] = move(query_vector[vector_index]);
+			swap(query_vector[0],query_vector[1]);
 			break;
 		default:
 			cout << "Вы выбрали не то число" << endl;
