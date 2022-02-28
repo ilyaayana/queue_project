@@ -17,7 +17,7 @@ private:
 	struct QItem {
 
 		int info;
-		Priority priority;
+		const Priority priority;
 		QItem* next;
 		QItem(int Ainfo,Priority Apriority) : info(Ainfo), priority(Apriority), next(NULL)  {};
 	};
