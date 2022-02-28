@@ -49,28 +49,34 @@ int main()
 		switch (option) {
 		case(1):
 			int tmp_num;
+			Priority priority;
 			cout << "\nВведите число: ";
 			cin >> tmp_num;
+			do {
 
-			cout << "\nВыберите приоритет:\n"
-				"1.Высокий приоритет\n"
-				"2.Средний приоритет\n"
-				"3.Низкий приоритет\n"
-				"Ваш выбор: ";
-			cin >> tmp_priority;
+				cout << "\nВыберите приоритет:\n"
+					"1.Высокий приоритет\n"
+					"2.Средний приоритет\n"
+					"3.Низкий приоритет\n"
+					"Ваш выбор: ";
+				cin >> tmp_priority;
 
-			Priority priority;
-			switch (tmp_priority) {
-			case 1:
-				priority = HIGH;
-				break;
-			case 2:
-				priority = MEDIUM;
-				break;
-			case 3:
-				priority = LOW;
-				break;
-			}
+				switch (tmp_priority) {
+				case 1:
+					priority = HIGH;
+					break;
+				case 2:
+					priority = MEDIUM;
+					break;
+				case 3:
+					priority = LOW;
+					break;
+				default:
+					cout << "\nВы выбрали не то число" << endl;
+					break;
+				}
+			}while (tmp_priority >= 4 || tmp_priority < 1);
+
 
 			query_vector[vector_index].Push(tmp_num, priority);
 			break;
@@ -153,6 +159,6 @@ int main()
 			cin.ignore(32767, '\n');
 			break;
 		}
-		cout << "\n";
+		 cout << "\n";
 	}
 }
